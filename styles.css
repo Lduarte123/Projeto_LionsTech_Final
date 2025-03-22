@@ -1,0 +1,558 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.linha-azul, .linha-vermelha {
+    width: 100%;
+    height: 28px;
+}
+
+.linha-azul {
+    background-color: #2F2655;
+}
+
+.linha-vermelha {
+    background-color: #CC1235;
+}
+
+.header {
+    max-width: 90%;
+    height: auto;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+/* Logo */
+.header img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Ícone do menu hambúrguer */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Menu padrão (desktop) */
+nav {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    gap: 12px;
+}
+
+/* Estilos do menu mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostra o botão do menu */
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Esconde o menu */
+        width: 250px;
+        height: 100vh;
+        background-color: #2F2655;
+        flex-direction: column;
+        padding: 20px;
+        transition: right 0.3s ease-in-out;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        color: white;
+        font-size: 18px;
+    }
+
+    .menu-open {
+        right: 0; /* Abre o menu */
+    }
+}
+
+/* Estilizando a seção main */
+.main {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Ajuste conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagem de fundo */
+.bg-image, .bg-fundo {
+    width: 100%;
+    height: 501px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Conteúdo sobreposto */
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 80%;
+}
+
+/* Imagem da logo */
+.logo-image {
+    width: 250px; /* Ajuste o tamanho conforme necessário */
+    margin-bottom: 15px;
+}
+
+/* Texto abaixo da imagem */
+.content p {
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Imagem de fundo */
+.bg-fundo {
+    width: 100%;
+    height: 500px; /* Ajuste conforme necessário */
+    object-fit: cover; /* Ajusta a imagem para cobrir toda a área */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Coloca a imagem atrás de outros elementos */
+}
+
+/* Seção "quem somos" */
+.quem-somos {
+    position: relative; /* Para a imagem de fundo ficar dentro da seção */
+    padding: 20px;
+    min-height: 500px; /* Garante que a seção tenha altura mínima igual à imagem de fundo */
+}
+
+/* Layout da seção com imagem fora e texto */
+.quem-somos-lado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    color: #333;
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+    max-width: 1200px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+/* Estilizando a imagem fora */
+.imagem-fora {
+    width: 40%; /* Ajuste conforme necessário */
+    margin-right: 20px; /* Espaçamento entre a imagem e o texto */
+}
+
+.imagem-fora img {
+    width: 100%;
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilizando o texto */
+.texto {
+    width: 55%; /* Ajuste conforme necessário */
+}
+
+.texto h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #CC1235;
+    margin: 60px;
+}
+
+.texto p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.texto a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #2F2655;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block; /* Garante que o botão se comporte corretamente */
+}
+
+/* Seção eventos */
+.eventos {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    background-color: #011759;
+    min-height: 100vh; /* Garante altura mínima para exibir a imagem */
+}
+
+.eventos-image-fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+ 
+}
+
+.eventos-image-fundo img {
+    width: 100%;
+    height: 501px;  
+    display: block; /* Garante que a imagem seja exibida corretamente */
+}
+.eventos h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    z-index: 1; /* Garante que o título fique acima da imagem de fundo */
+}
+
+.card-eventos {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgb(0, 0, 0); /* Fundo escuro para o card */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    position: relative;
+    z-index: 1; /* Garante que o card fique acima da imagem de fundo */
+}
+
+details {
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparência leve para o details */
+    border-radius: 5px;
+    padding: 10px;
+}
+
+summary {
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+summary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+p {
+    padding: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+.imagens {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1; /* Garante que as imagens fiquem acima da imagem de fundo */
+}
+
+.imagens img {
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 600px) {
+    .eventos {
+        padding: 10px;
+    }
+
+    .eventos h1 {
+        font-size: 2rem;
+    }
+
+    .card-eventos {
+        padding: 15px;
+    }
+
+    summary {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .imagens {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .imagens img {
+        height: 300px; /* Ajusta a altura das imagens para telas menores */
+    }
+}
+/* Seção projetos */
+.projetos {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 40px 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+}
+.bem-tricolor{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+/* Estilizando o texto da seção projetos */
+.projetos-text {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.projetos-text img {
+    width: 50px; /* Tamanho do ícone */
+    margin-bottom: 15px; /* Espaçamento abaixo do ícone */
+    
+}
+
+.projetos-text h1 {
+    font-size: 2.5rem; /* Tamanho da fonte do título */
+    color: #2F2655; /* Cor roxa escura para o título */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+    text-transform: uppercase; /* Deixa o título em maiúsculas */
+    
+}
+
+.projetos-text p {
+    font-size: 1.2rem; /* Tamanho da fonte do parágrafo */
+    color: #333; /* Cor cinza escura para o texto */
+    line-height: 1.5; /* Altura da linha para melhor legibilidade */
+}
+
+.projetos-text .bold {
+    font-weight: bold; /* Negrito para as palavras destacadas */
+    color: #CC1235; /* Cor vermelha para as palavras em negrito */
+}
+
+/* Estilizando as imagens da seção projetos */
+/* Estilizando as imagens da seção projetos */
+.projetos-imagens {
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza as imagens */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Força exatamente 3 colunas */
+    gap: 20px; /* Espaçamento entre as imagens */
+}
+
+.projetos-imagens img {
+    width: 100%;
+    height: 150px; /* Altura fixa para as imagens */
+    object-fit: contain; /* Garante que a imagem não seja distorcida */
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: transform 0.3s ease; /* Animação ao passar o mouse */
+}
+
+.projetos-imagens img:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 900px) {
+    .projetos-imagens {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+    }
+}
+
+@media (max-width: 600px) {
+    .projetos-text h1 {
+        font-size: 2rem; /* Reduz o tamanho do título em telas menores */
+    }
+
+    .projetos-text p {
+        font-size: 1rem; /* Reduz o tamanho do parágrafo */
+    }
+
+    .projetos-imagens {
+        grid-template-columns: repeat(1, 1fr); /* 1 coluna em telas muito pequenas */
+    }
+
+    .projetos-imagens img {
+        height: 120px; /* Reduz a altura das imagens em telas menores */
+    }
+}
+/* Estilizando o footer */
+footer {
+    background-color: #011759; /* Fundo na cor especificada */
+    color: #fff; /* Cor do texto branca para contraste */
+    padding: 40px 20px; /* Espaçamento interno */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Três colunas de largura igual */
+    gap: 30px; /* Espaçamento entre as colunas */
+    max-width: 100%; /* Largura máxima para centralizar */
+    margin: 0px auto; /* Centraliza o footer */
+}
+
+/* Estilizando a seção .icons */
+.icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+}
+
+.icons-fortaleza {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os ícones do Fortaleza */
+    margin-bottom: 15px; /* Espaçamento abaixo dos ícones */
+}
+
+.icons-fortaleza img {
+    width: 40px; /* Tamanho dos ícones */
+    height: 40px;
+    object-fit: contain; /* Garante que os ícones não sejam distorcidos */
+}
+
+.icons p {
+    font-size: 1rem;
+    color: #ddd; /* Cor cinza clara para o texto */
+    margin-bottom: 15px; /* Espaçamento abaixo do texto */
+}
+
+.icons-socias {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os ícones sociais */
+}
+
+.icons-socias img {
+    width: 30px; /* Tamanho dos ícones sociais */
+    height: 30px;
+    object-fit: contain; /* Garante que os ícones não sejam distorcidos */
+}
+
+/* Estilizando a seção .Social */
+.Social {
+    display: flex;
+    flex-direction: column;
+}
+
+.Social h6 {
+    font-size: 1.2rem;
+    color: #ffffff; /* Cor vermelha para o título, consistente com o design */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+    text-transform: uppercase; /* Título em maiúsculas */
+    border-bottom: #fff solid 2px;
+}
+
+.Social ul {
+    list-style: none; /* Remove os marcadores da lista */
+}
+
+.Social ul li {
+    font-size: 1rem;
+    color: #CC1235; /* Cor cinza clara para os itens da lista */
+    margin-bottom: 10px; /* Espaçamento entre os itens */
+    cursor: pointer; /* Indica que os itens são clicáveis */
+}
+
+.Social ul li:hover {
+    color: #ef1c43; /* Muda a cor para branco ao passar o mouse */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Estilizando a seção .media */
+.media {
+    display: flex;
+    flex-direction: column;
+}
+
+.media h6 {
+    font-size: 1.2rem;
+    color: #ffffff; /* Cor vermelha para o título */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+    text-transform: uppercase; /* Título em maiúsculas */
+    border-bottom: #fff solid 2px;
+}
+
+.media ul {
+    list-style: none; /* Remove os marcadores da lista */
+}
+
+.media ul li {
+    font-size: 1rem;
+    color: #CC1235; /* Cor cinza clara para os itens da lista */
+    margin-bottom: 10px; /* Espaçamento entre os itens */
+    cursor: pointer; /* Indica que os itens são clicáveis */
+}
+
+.media ul li:hover {
+    color: #ef1c43; /* Muda a cor para branco ao passar o mouse */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Ajustes responsivos para o footer */
+@media (max-width: 900px) {
+    footer {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+    }
+
+    .media {
+        grid-column: span 2; /* Faz a seção .media ocupar as duas colunas */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+}
+
+@media (max-width: 600px) {
+    footer {
+        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .icons {
+        align-items: center; /* Centraliza os ícones */
+    }
+
+    .icons-fortaleza, .icons-socias {
+        justify-content: center; /* Centraliza os ícones horizontalmente */
+    }
+
+    .Social, .media {
+        text-align: center; /* Centraliza o texto */
+    }
+}
