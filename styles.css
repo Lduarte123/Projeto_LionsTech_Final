@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .linha-azul, .linha-vermelha {
@@ -50,14 +50,27 @@ body {
     border: none;
 }
 
-/* Menu padrão (desktop) */
+
 nav {
     display: flex;
 }
 
 nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    gap: 12px;
+    gap: 15px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #555; /* Cor padrão do texto */
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #000; /* Cor preta ao passar o mouse */
 }
 
 /* Estilos do menu mobile */
@@ -186,17 +199,21 @@ nav ul {
 }
 
 .texto h1 {
-    font-size: 32px;
+    font-size: 64px;
     margin-bottom: 20px;
     color: #CC1235;
-    margin: 60px;
+    margin: 30px;
+    font-family: "Koulen", sans-serif;
 }
 
 .texto p {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 20px;
-    color: #333;
+    color: #36345A;
+}
+.bold {
+    font-weight: bold;
 }
 
 .texto a {
@@ -234,13 +251,14 @@ nav ul {
     display: block; /* Garante que a imagem seja exibida corretamente */
 }
 .eventos h1 {
-    font-size: 2.5rem;
+    font-size: 70px;
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
     color: #fff;
     position: relative;
     z-index: 1; /* Garante que o título fique acima da imagem de fundo */
+    font-family: "Koulen", sans-serif;
 }
 
 .card-eventos {
@@ -262,12 +280,21 @@ details {
 }
 
 summary {
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Faz o texto ficar de um lado e a imagem do outro */
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     padding: 10px;
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.imagem-summary {
+    width: 36px; /* Ajuste conforme necessário */
+    height: auto;
+    margin-left: 20px; /* Adiciona um espaço entre o texto e a imagem */
 }
 
 summary:hover {
@@ -354,10 +381,11 @@ p {
 }
 
 .projetos-text h1 {
-    font-size: 2.5rem; /* Tamanho da fonte do título */
-    color: #2F2655; /* Cor roxa escura para o título */
+    font-size: 70px; /* Tamanho da fonte do título */
+    color: #CC1235; /* Cor roxa escura para o título */
     margin-bottom: 15px; /* Espaçamento abaixo do título */
     text-transform: uppercase; /* Deixa o título em maiúsculas */
+    font-family: "Koulen";
     
 }
 
@@ -369,7 +397,7 @@ p {
 
 .projetos-text .bold {
     font-weight: bold; /* Negrito para as palavras destacadas */
-    color: #CC1235; /* Cor vermelha para as palavras em negrito */
+    color: #011759; /* Cor vermelha para as palavras em negrito */
 }
 
 /* Estilizando as imagens da seção projetos */
@@ -442,6 +470,16 @@ footer {
     gap: 15px; /* Espaçamento entre os ícones do Fortaleza */
     margin-bottom: 15px; /* Espaçamento abaixo dos ícones */
 }
+.icons-fortaleza  .bem-tricolor2 {
+    width: 180px;
+    height: 100px;
+
+}
+.icons-fortaleza  .logo {
+    width: 100px;
+    height: 100px;
+}
+
 
 .icons-fortaleza img {
     width: 40px; /* Tamanho dos ícones */
@@ -473,11 +511,12 @@ footer {
 }
 
 .Social h6 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #ffffff; /* Cor vermelha para o título, consistente com o design */
     margin-bottom: 15px; /* Espaçamento abaixo do título */
     text-transform: uppercase; /* Título em maiúsculas */
     border-bottom: #fff solid 2px;
+    font-family: "koulen";
 }
 
 .Social ul {
@@ -503,11 +542,12 @@ footer {
 }
 
 .media h6 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #ffffff; /* Cor vermelha para o título */
     margin-bottom: 15px; /* Espaçamento abaixo do título */
     text-transform: uppercase; /* Título em maiúsculas */
     border-bottom: #fff solid 2px;
+    font-family: "koulen";
 }
 
 .media ul {
@@ -517,42 +557,42 @@ footer {
 .media ul li {
     font-size: 1rem;
     color: #CC1235; /* Cor cinza clara para os itens da lista */
-    margin-bottom: 10px; /* Espaçamento entre os itens */
-    cursor: pointer; /* Indica que os itens são clicáveis */
+    margin-bottom: 10px; 
+    cursor: pointer;
 }
 
 .media ul li:hover {
-    color: #ef1c43; /* Muda a cor para branco ao passar o mouse */
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    color: #ef1c43;
+    text-decoration: underline;
 }
 
-/* Ajustes responsivos para o footer */
+
 @media (max-width: 900px) {
     footer {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     .media {
-        grid-column: span 2; /* Faz a seção .media ocupar as duas colunas */
-        text-align: center; /* Centraliza o conteúdo */
+        grid-column: span 2; 
+        text-align: center; 
     }
 }
 
 @media (max-width: 600px) {
     footer {
-        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
-        text-align: center; /* Centraliza o conteúdo */
+        grid-template-columns: 1fr; 
+        text-align: center; 
     }
 
     .icons {
-        align-items: center; /* Centraliza os ícones */
+        align-items: center;
     }
 
     .icons-fortaleza, .icons-socias {
-        justify-content: center; /* Centraliza os ícones horizontalmente */
+        justify-content: center; 
     }
 
     .Social, .media {
-        text-align: center; /* Centraliza o texto */
+        text-align: center; 
     }
 }
